@@ -1,3 +1,12 @@
+// ==UserScript==
+// @name         МультиКач GUI
+// @description  LW_multi Bot
+// @match        https://www.lowadi.com/*
+// @version      0.3.8
+// @grant       none
+// @run-at      document-end
+// ==/UserScript==
+
 // id завода, в который переиещаем рожденных жеребят. Если перемещать не надо, оставляем пустым
 zavod = "";
 
@@ -412,7 +421,7 @@ function GeneticsTraining(){
 
 	}
 
-	else if (getMyParameterByName(walk2 + 'Complet')<100 && walk2!='')//65
+	else if (getMyParameterByName(walk2 + 'Complet')<100 && walk2!='')
 	{
 		HayToGive = 14;
 		OatsToGive = 14;
@@ -435,7 +444,7 @@ function GeneticsTraining(){
 			setTimeout(sleep,1000);
 			setTimeout(OR,1100);
         }
-		
+
 		if (chevalSexe == "feminin"){
 			BirthProg();
 		}
@@ -3007,7 +3016,7 @@ function CompNoVIP_Second(){
 $('body').append('<div class="lwm_logo" style="display:block; z-index:9999; position:fixed; right:0;  top:120px; width:150px;"><img src="https://raw.githubusercontent.com/Crasher69/lowadi/master/horse.png" /></div>');
 
 $('body').append('<style>.lw {color:#fff;}</style><div class="lw_gui" style="display:block; z-index:9999; position:fixed; width:240px; height:auto; right:0; top:300px; padding:5px; background-color: rgba(0, 0, 0, 0.65);  border-radius: 10px 0px 0px 10px;"></div>');
-$('.lw_gui').append('<center><p style="color:#fff;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color:#F1F9F1;"><b>LWbot: МультиКач</b></span></p> </center>');
+$('.lw_gui').append('<center><p style="color:#fff;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color:#F1F9F1;"><b>BotJack 0.3.8</b></span></p> </center>');
 $('.lw_gui').append('<center><p style="color:#fff;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; color:#F1F9F1;">  </p></center> <hr>');
 
 $('.lw_gui').append('<span class="lw">id завода:</span> <input type="text" name="lw_zavod" id="lw_zavod" size="18"><br>');
@@ -3015,11 +3024,13 @@ $('.lw_gui').append('<span class="lw">Тренировка 1: &nbsp; &nbsp;</spa
 $('.lw_gui').append('<span class="lw">Тренировка 2: &nbsp; &nbsp;</span> <select id="train2" name="train2">	<option value="dressage">выездка</option>	<option value="galop">галоп</option>	<option value="saut">прыжки</option>	<option value="trot">рысь</option>	<option value="endurance">выносливость</option>	<option value="vitesse">скорость</option>		</select><br>');
 $('.lw_gui').append('<span class="lw">Тренировка 3: &nbsp; &nbsp;</span> <select id="train3" name="train3">	<option value="dressage">выездка</option>	<option value="galop">галоп</option>	<option value="saut">прыжки</option>	<option value="trot">рысь</option>	<option value="endurance">выносливость</option>	<option value="vitesse">скорость</option>		</select><br>');
 
-$('.lw_gui').append('<span class="lw">Прогулка 1: &nbsp; &nbsp;</span> <select id="walk1" name="walk1">	<option value="montagne">Горы</option>	<option value="foret">Лес</option>	</select><br>');
-$('.lw_gui').append('<span class="lw">Прогулка 2: &nbsp; &nbsp;</span> <select id="walk2" name="walk1">	<option value=""></option>	<option value="montagne">Горы</option>	<option value="foret">Лес</option>	</select><br>');
-
 $('.lw_gui').append('<span class="lw">Специализация&nbsp;</span> <select id="specialisation" name="specialisation">	<option value="specialisationWestern">Вестерн</option>	<option value="specialisationClassique">Классика</option>	</select><br>');
 $('.lw_gui').append('<span class="lw">Соревнование: &nbsp;</span> <select id="compName" name="compName">	 <optgroup label="Классика"><option value="galop">галоп</option>	<option value="dressage">выездка</option>	<option value="saut">конкур</option>	<option value="cross">кросс</option>	<option value="trot">рысь</option></optgroup>	<optgroup label="Вестерн"><option value="trail-class">трейл</option>	<option value="cutting">каттинг</option>	<option value="barrel">бочки</option>	<option value="reining">рейнинг</option>	<option value="western-pleasure">Плеже</option>	</optgroup>	</select><br>');
+
+$('.lw_gui').append('<span class="lw">Прогулка 1: &nbsp; &nbsp; &nbsp; &nbsp;</span> <select id="walk1" name="walk1">  <option value="montagne">Горы</option>	<option value="foret">Лес</option>	</select><br>');
+$('.lw_gui').append('<span class="lw">Прогулка 2: &nbsp; &nbsp; &nbsp; &nbsp;</span> <select id="walk2" name="walk2">  <option value=""></option>	<option value="montagne">Горы</option>	<option value="foret">Лес</option>	</select><br>');
+
+
 $('.lw_gui').append('<span class="lw">Докачивать навыки: </span> <input type="checkbox" id="nav" /><br>');
 $('.lw_gui').append('<span class="lw">Кидать случек: &nbsp;</span> <input type="text" size="10" id="offerstobedone" />');
 $('.lw_gui').append('<span class="lw">Случки с: &nbsp; &nbsp; &nbsp;</span> <select id="poroda">		<option value="1">Американская</option>	<option value="2">Английская</option>	<option value="3">Аппалуза</option>	<option value="4">Арабская</option>	<option value="5">Аргентинцы</option>	<option value="6">Ахалтекинская</option>	<option value="7">Буденновская</option>	<option value="8">Голландская</option>	<option value="9">Голштинская</option>	<option value="10">Донская</option>	<option value="11">Ирландская</option>	<option value="12">Исландская</option>	<option value="13">Кнабструппер</option>	<option value="14">Липиццан</option>	<option value="15">Лузитанская</option>	<option value="16">Мустанг</option>	<option value="17">Нокота</option>	<option value="18">Орловский рысак</option>	<option value="19">Пейнт</option>	<option value="20">Теннесийская</option>	<option value="21">Тракенская</option>	<option value="22">Французский</option>	<option value="23">Фриз</option>	<option value="24">Ганноверская</option>	<option value="25">Цыганская</option>	<option value="26">Четвертьмильная</option>	<option value="27">Испанская</option>	<option value="28">Шагия</option> <option value="29">Бельгийский пони</optoin> <option value="30">Коннемара</optoin> <option value="31">Пони Хайленд</optoin> <option value="32">Уэльский</optoin> <option value="33">Фьорд</optoin> <option value="34">Хафлингер</optoin> <option value="35">Шетландский пони</optoin> </select>');
@@ -3069,10 +3080,10 @@ function load_settings()
     train1 = localStorage.getItem("lwm_train1");
     train2 = localStorage.getItem("lwm_train2");
     train3 = localStorage.getItem("lwm_train3");
-	
-	walk1 = localStorage.getItem("walk1");
-	walk2 = localStorage.getItem("walk2");
-	
+
+	walk1 = localStorage.getItem("lwm_walk1");
+	walk2 = localStorage.getItem("lwm_walk2");
+
     if (train1===null || train2===null || train3===null) {
         alert('Перед началом работы необходимо настроить бота! Сделайте необходимые настройки и нажмите кнопку Сохранить');
     }
@@ -3093,10 +3104,10 @@ function form_settings()
     $("#train1 option[value='"+train1+"']").attr("selected", "selected");
     $("#train2 option[value='"+train2+"']").attr("selected", "selected");
     $("#train3 option[value='"+train3+"']").attr("selected", "selected");
-	
+
 	 $("#walk1 option[value='"+walk1+"']").attr("selected", "selected");
 	 $("#walk2 option[value='"+walk2+"']").attr("selected", "selected");
-	  
+
     $("#specialisation option[value='"+specialisation+"']").attr("selected", "selected");
     $("#compName option[value='"+compName+"']").attr("selected", "selected");
     $("#offerstobedone").val(offersToBeDone);
