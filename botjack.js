@@ -1229,7 +1229,7 @@ function walk00(walkName, trainTime1)//////////////////errorsBox
 
 			spans[i].click();
 			trains.click();
-			return;
+			return undefined;
 		}
 	}
 }
@@ -1275,7 +1275,7 @@ function walk(walkName)//////////////////
 
 			spans[i].click();
 			trains.click();
-			return;
+			return undefined;
 		}
 	}
 }
@@ -1958,7 +1958,7 @@ function train(trainName, trainTime){
 
 			spans[i].click();
 			trains.click();
-			return;
+			return undefined;
 		}
 	}
 }
@@ -2026,7 +2026,7 @@ if (/www.lowadi.com\/elevage\/competition\/inscription\?cheval=/.test(window.loc
 	setTimeout(competitionInscript,pause3);
 	var  pause4 =  pause2 + getRandomPause(mediumPause1*6,mediumPause2*6);
 	setTimeout( checkComp,pause4);
-	return;
+	return undefined;
 }
 //Запись на первое
 function competitionInscript(){
@@ -2237,7 +2237,7 @@ function doEatDef()//////////??????
 		oats = OatsToGive;
 	}
 
-	if (hay + oats === 0) return;
+	if (hay + oats === 0) return undefined;
 	if (d2.indexOf('недостаточный') !== -1)
 	{
 		hay = 20-hayGiven();
@@ -2298,7 +2298,7 @@ function doEatPre(){
 
 		d.click();
 
-		return;
+		return undefined;
 	}
 	var subm = false;
 	var d2 = document.getElementById('feeding').innerHTML;
@@ -2307,8 +2307,8 @@ function doEatPre(){
 	var oats = oatsToGive();
 	//alert('hay' + hay);
 	//alert('oats' + oats);
-	if (hay + oats === 0) return;
-	if (d2.indexOf('толст') !== -1) return;
+	if (hay + oats === 0) return undefined;
+	if (d2.indexOf('толст') !== -1) return undefined;
 	if (d2.indexOf('недостаточный') !== -1)
 	{
 		hay = 20-hayGiven();
@@ -2361,7 +2361,7 @@ function doEatNorm()//////////?
 	{
 		var d = document.getElementById('boutonAllaiter');
 		d.click();
-		return;
+		return undefined;
 
 	}
 	var subm = false;
@@ -2371,8 +2371,8 @@ function doEatNorm()//////////?
 	var oats = oatsToGive();
 	//alert('hay' + hay);
 	//alert('oats' + oats);
-	if (hay + oats === 0) return;
-	if (d2.indexOf('толст') !== -1) return;
+	if (hay + oats === 0) return undefined;
+	if (d2.indexOf('толст') !== -1) return undefined;
 	if (d2.indexOf('недостаточный') !== -1)
 	{
 		hay = 20-hayGiven();
@@ -2680,7 +2680,7 @@ function getMyParameterByName(x) {
 function pauseFunc(){
 	if (document.body.innerHTML.indexOf('chevalId') !== -1)
 	{
-		return;
+		return undefined;
 	}
 }
 // Удаление пробелов
@@ -2785,7 +2785,7 @@ function eqCenterReg3(){
 						{
 
 							buttons0[j].click();
-							return;
+							return undefined;
 						}
 
 					}
@@ -2793,7 +2793,7 @@ function eqCenterReg3(){
 					//     for (var k = 0; k < buttons1.length; k++) {
 
 					//   buttons1[k].click();
-					//   return;
+					//   return undefined;
 
 
 					// }
