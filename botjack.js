@@ -3016,7 +3016,7 @@ function CompNoVIP_Second(){
 $('body').append('<div class="lwm_logo" style="display:block; z-index:9999; position:fixed; right:0;  top:120px; width:150px;"><img src="https://raw.githubusercontent.com/Crasher69/lowadi/master/horse.png" /></div>');
 
 $('body').append('<style>.lw {color:#fff;}</style><div class="lw_gui" style="display:block; z-index:9999; position:fixed; width:240px; height:auto; right:0; top:300px; padding:5px; background-color: rgba(0, 0, 0, 0.65);  border-radius: 10px 0px 0px 10px;"></div>');
-$('.lw_gui').append('<center><p style="color:#fff;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color:#F1F9F1;"><b>BotJack 0.3.8</b></span></p> </center>');
+$('.lw_gui').append('<center><p style="color:#fff;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color:#F1F9F1;"><b>BotJack 0.3.9</b></span></p> </center>');
 $('.lw_gui').append('<center><p style="color:#fff;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; color:#F1F9F1;">  </p></center> <hr>');
 
 $('.lw_gui').append('<span class="lw">id завода:</span> <input type="text" name="lw_zavod" id="lw_zavod" size="18"><br>');
