@@ -2,7 +2,7 @@
 // @name         МультиКач GUI
 // @description  LW_multi Bot
 // @match        https://www.lowadi.com/*
-// @version      0.3.8
+// @version      0.4.0
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
