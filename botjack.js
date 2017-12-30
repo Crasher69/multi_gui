@@ -2,7 +2,7 @@
 // @name         МультиКач GUI
 // @description  LW_multi Bot
 // @match        https://www.lowadi.com/*
-// @version      0.4.3
+// @version      0.4.5
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -2021,7 +2021,7 @@ if (/www.lowadi.com\/elevage\/competition\/inscription\?cheval=/.test(window.loc
 	setTimeout(competitionInscript,pause3);
 	var  pause4 =  pause2 + getRandomPause(mediumPause1*6,mediumPause2*6);
 	setTimeout( checkComp,pause4);
-	return;
+	
 }
 //Запись на первое
 function competitionInscript(){
@@ -3011,7 +3011,7 @@ function CompNoVIP_Second(){
 $('body').append('<div class="lwm_logo" style="display:block; z-index:9999; position:fixed; right:0;  top:120px; width:150px;"><img src="https://raw.githubusercontent.com/Crasher69/lowadi/master/horse.png" /></div>');
 
 $('body').append('<style>.lw {color:#fff;}</style><div class="lw_gui" style="display:block; z-index:9999; position:fixed; width:240px; height:auto; right:0; top:300px; padding:5px; background-color: rgba(0, 0, 0, 0.65);  border-radius: 10px 0px 0px 10px;"></div>');
-$('.lw_gui').append('<center><p style="color:#fff;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color:#F1F9F1;"><b>BotJack 0.4.3</b></span></p> </center>');
+$('.lw_gui').append('<center><p style="color:#fff;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color:#F1F9F1;"><b>BotJack 0.4.5</b></span></p> </center>');
 $('.lw_gui').append('<center><p style="color:#fff;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; color:#F1F9F1;">  </p></center> <hr>');
 
 $('.lw_gui').append('<span class="lw">id завода:</span> <input type="text" name="lw_zavod" id="lw_zavod" size="18"><br>');
@@ -3020,6 +3020,8 @@ $('.lw_gui').append('<span class="lw">Тренировка 2: &nbsp; &nbsp;</spa
 $('.lw_gui').append('<span class="lw">Тренировка 3: &nbsp; &nbsp;</span> <select id="train3" name="train3">	<option value="dressage">выездка</option>	<option value="galop">галоп</option>	<option value="saut">прыжки</option>	<option value="trot">рысь</option>	<option value="endurance">выносливость</option>	<option value="vitesse">скорость</option>		</select><br>');
 
 $('.lw_gui').append('<span class="lw">Специализация&nbsp;</span> <select id="specialisation" name="specialisation">	<option value="specialisationWestern">Вестерн</option>	<option value="specialisationClassique">Классика</option>	</select><br>');
+$('.lw_gui').append('<span class="lw">Расположение КСК</span> <select id="ksk_r" name="ksk_r">	<option value="foret">Лес</option>	<option value="plage">Пляж</option>	<option value="montagne">Горы</option>	</select><br>');
+
 $('.lw_gui').append('<span class="lw">Соревнование: &nbsp;</span> <select id="compName" name="compName">	 <optgroup label="Классика"><option value="galop">галоп</option>	<option value="dressage">выездка</option>	<option value="saut">конкур</option>	<option value="cross">кросс</option>	<option value="trot">рысь</option></optgroup>	<optgroup label="Вестерн"><option value="trail-class">трейл</option>	<option value="cutting">каттинг</option>	<option value="barrel">бочки</option>	<option value="reining">рейнинг</option>	<option value="western-pleasure">Плеже</option>	</optgroup>	</select><br>');
 
 $('.lw_gui').append('<span class="lw">Прогулка 1: &nbsp; &nbsp; &nbsp; &nbsp;</span> <select id="walk1" name="walk1">  <option value="montagne">Горы</option>	<option value="foret">Лес</option>	</select><br>');
@@ -3048,6 +3050,7 @@ function save_settings()
 	let walk1 = $("#walk1").val();
 	let walk2 = $("#walk2").val();
 	let specialisation = $("#specialisation").val();
+	let ksk = $('#ksk_r').val();
 	let compName = $("#compName").val();
 	let offerstobedone = $("#offerstobedone").val();
 	let poroda = $("#poroda").val();
@@ -3062,6 +3065,7 @@ function save_settings()
 	localStorage.setItem("lwm_walk1", walk1);
 	localStorage.setItem("lwm_walk2", walk2);
     localStorage.setItem("lwm_spec", specialisation);
+	localStorage.setItem("lwm_ksk", ksk);
     localStorage.setItem("lwm_comp", compName);
     localStorage.setItem("lwm_offers", offerstobedone);
     localStorage.setItem("lwm_poroda", poroda);
@@ -3078,11 +3082,15 @@ function load_settings()
 
 	walk1 = localStorage.getItem("lwm_walk1");
 	walk2 = localStorage.getItem("lwm_walk2");
+	
+	
 
     if (train1===null || train2===null || train3===null) {
         alert('Перед началом работы необходимо настроить бота! Сделайте необходимые настройки и нажмите кнопку Сохранить');
     }
     specialisation = localStorage.getItem("lwm_spec");
+	spec = localStorage.getItem("lwm_ksk");
+	
     if (specialisation=="specialisationWestern") amSpecialisation = "western";
     else amSpecialisation = "classique";
 
@@ -3104,6 +3112,8 @@ function form_settings()
 	 $("#walk2 option[value='"+walk2+"']").attr("selected", "selected");
 
     $("#specialisation option[value='"+specialisation+"']").attr("selected", "selected");
+	$("#ksk_r option[value='"+spec+"']").attr("selected", "selected");
+	
     $("#compName option[value='"+compName+"']").attr("selected", "selected");
     $("#offerstobedone").val(offersToBeDone);
     $("#poroda option[value='"+poroda+"']").attr("selected", "selected");
